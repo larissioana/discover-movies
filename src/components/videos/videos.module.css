@@ -1,0 +1,26 @@
+.videosContainer
+{
+    padding-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.reactPlayer
+{
+    border: 1px solid rgb(80, 78, 78);
+    box-shadow: 2px 5px 9px rgb(60, 59, 59);
+    width: 300px!important;
+    height: 200px!important;
+}
+
+.loadingVideos
+{
+    width: 300px;
+    height: 200px;
+    background: rgb(57, 56, 56);
+    border-radius: .4rem;
+    filter: blur(3px);
+}

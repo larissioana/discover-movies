@@ -1,0 +1,77 @@
+.wrapper
+{
+    width: 100%;
+}
+
+.container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+    border: 1px solid rgb(28, 28, 28);
+    box-shadow: 0px 0px 8px 0px rgb(8, 8, 8);
+    margin-top: 2rem;
+}
+
+.img
+{
+    object-fit: cover;
+    object-position: top;
+    height: auto;
+}
+
+.flexContainer
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .2rem;
+}
+
+.left
+{
+    width: 250px;
+}
+
+.episodes,
+.date
+{
+    font-size: clamp(.9rem, 2vw, 1.2rem);
+    line-height: 3rem;
+}
+
+.name
+{
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.overview
+{
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+    max-width: 700px;
+}
+
+.overviewSpan
+{
+    color: rgb(223, 173, 8);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+@media screen and (max-width: 600px)
+{
+    .container
+    {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }   
+
+    .img
+    {
+        width: 12rem;
+        height: 18rem;
+    }
+}

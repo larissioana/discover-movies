@@ -1,0 +1,45 @@
+.container
+{
+    padding: 2rem;
+}
+
+.title
+{
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    font-weight: bolder;
+    border-right: 2px solid #ffa500;
+    width: 6.5rem;
+}
+
+.flexContainer
+{
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding-top: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.name
+{
+    font-size: clamp(.9rem, 2vw, 1rem);
+    font-weight: bolder;
+    padding-top: .4rem;
+}
+
+.character
+{
+    font-size: clamp(.9rem, 2vw, 1rem);
+    font-weight: bolder;
+    color: rgb(171, 164, 164);
+    padding-top: .3rem;
+}
+
+.img
+{
+    cursor: pointer;
+    object-fit: cover;
+    object-position: top;
+    border-radius: .2rem;
+}

@@ -1,0 +1,42 @@
+.container
+{
+    height: 500px;
+    position: relative;
+}
+
+.img
+{
+    object-fit: cover;
+    object-position: top;
+    animation: anim .3s ease-in;
+    transition: all .4s ease-in;
+    border-radius: 1rem;
+}
+
+.onTopBanner
+{
+    position: absolute;
+    width: 100%;
+    background: rgba(3, 2, 2, 0.2);
+    top: 0;
+    height: 500px;
+    border-radius: 1rem;
+}
+
+@keyframes anim
+{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .container
+    {
+        height: 20rem;
+    }
+}

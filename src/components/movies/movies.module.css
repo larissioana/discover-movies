@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  padding: 3rem 1rem 2rem 1rem;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.containerWrapper {
+  display: flex;
+  padding: 3rem 1rem 2rem 1rem;
+  justify-content: center;
+  gap: 0.7rem;
+  row-gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.voteContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.9rem;
+}
+
+.vote {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: rgb(164, 162, 162);
+}
+
+.title {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: rgb(164, 162, 162);
+  width: 12rem;
+  padding-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all .3s ease-in;
+}
+
+.img:hover
+{
+  scale: 1.1;
+}
+
+@media screen and (max-width:480px)
+{
+  .img
+  {
+    width: 10rem;
+    height: 15rem;
+  }
+
+  .container
+  {
+    gap: 0rem;
+  }
+}

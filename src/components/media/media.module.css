@@ -1,0 +1,76 @@
+.container
+{
+    padding: 2rem;
+}
+
+.title
+{
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    font-weight: bolder;
+}
+
+.flexContainer
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    font-size: clamp(.9rem, 2vw, 1rem);
+    font-weight: bolder;
+}
+
+.posters
+{
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding-top: 2rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.poster,
+.backdrop
+{
+object-fit: cover;
+object-position: top;
+border-radius: .4rem;
+}
+
+.loading
+{
+    width: 250px;
+    height: 350px;
+    background: rgb(16, 15, 15);
+    border-radius: .4rem;
+    filter: blur(3px);
+}
+
+.loadingBackdrops
+{
+    width: 230px;
+    height: 130px;
+    background: rgb(16, 15, 15);
+    border-radius: .4rem;
+    filter: blur(3px);
+}
+
+.loadingVideos
+{
+    width: 300px;
+    height: 200px;
+    background: rgb(57, 56, 56);
+    border-radius: .4rem;
+    filter: blur(3px);
+    padding-top: 2rem;
+}
+
+@media screen and (max-width: 600px)
+{
+    .poster
+    {
+        width: 10rem;
+        height: 15rem;
+    }
+}

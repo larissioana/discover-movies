@@ -1,0 +1,38 @@
+.pagination
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.selectedBtn
+{
+    color: rgb(155, 63, 160);
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+}
+
+.paginationBtn, .iconBtn
+{
+    color: rgb(255, 255, 255);
+    letter-spacing: .1rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.pages
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}

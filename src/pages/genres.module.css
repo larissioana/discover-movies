@@ -1,0 +1,26 @@
+
+.contentContainer
+{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activeContentType
+{
+    text-transform: capitalize;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    color: rgb(221, 146, 6);
+    font-weight: bolder;
+}
+
+.genre
+{
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: rgb(209, 205, 202);
+    font-weight: bolder;
+    
+}

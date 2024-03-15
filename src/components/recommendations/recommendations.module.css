@@ -1,0 +1,57 @@
+.container
+{
+    padding: 2rem;
+}
+
+.title
+{
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    font-weight: bolder;
+}
+
+.img
+{
+    object-fit: cover;
+    object-position: top;
+    border-radius: .6rem;
+}
+
+.flexContainer
+{
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding-top: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.vote
+{
+    font-weight: bolder;
+}
+
+.voteContainer
+{
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+
+.titleMovie
+{
+    font-size: clamp(.9rem, 2vw, 1rem);
+    font-weight: bolder;
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 400px)
+{
+    .img
+    {
+        width: 8rem;
+        height: 12rem;
+    }
+}

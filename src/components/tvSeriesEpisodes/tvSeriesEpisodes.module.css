@@ -1,0 +1,81 @@
+.episodeWrapper
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: flex-start;
+    border-bottom: 2px solid rgb(62, 62, 62);
+}
+
+.title
+{
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    line-height: 1.5rem;
+    font-weight: bolder;
+    color: rgb(240, 226, 226);
+    padding-bottom: .5rem;
+}
+
+.episodeNr
+{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgb(176, 171, 171);
+    padding-bottom: 1rem;
+}
+
+.overview
+{
+    width: 70%;
+    color: rgb(176, 171, 171);
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.episodeImage
+{
+    object-fit: cover;
+    border-radius: .5rem;
+    animation: animation .5s ease-in;
+}
+
+@keyframes animation
+{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.goBack
+{
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 768px)
+{
+    .overview
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+    .episodeImage
+    {
+        width: 270px
+    }
+} 
+
+@media screen and (max-width: 350px)
+{
+    .episodeImage
+    {
+        width: 220px
+    }
+} 
