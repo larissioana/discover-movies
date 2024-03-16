@@ -36,6 +36,7 @@
 object-fit: cover;
 object-position: top;
 border-radius: .4rem;
+margin-bottom: 1rem;
 }
 
 .loading

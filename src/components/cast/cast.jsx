@@ -6,10 +6,12 @@ import { shortenTitle } from '@/utils/helpers';
 import NoImage from '../../assets/blankphoto.webp';
 
 const Cast = ({ credits }) => {
-
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Top Cast</h2>
+            {
+                credits.cast.length > 0 &&
+                <h2 className={styles.title}>Top Cast</h2>
+            }
             <div className={styles.flexContainer}>
                 {
                     credits?.cast?.map((credit) => {

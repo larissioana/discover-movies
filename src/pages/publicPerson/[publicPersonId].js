@@ -104,12 +104,6 @@ const PublicPersonDetail = ({ data, images, externalIds, combinedCredits }) => {
                         <p className={styles.text}>Place of birth: <span className={styles.lightText}>{place_of_birth}</span></p>
                     }
                     {
-                        known_for_department &&
-                        <p className={styles.text}>Known for:
-                            <span className={styles.lightText}> {known_for_department}</span>
-                        </p>
-                    }
-                    {
                         biography &&
                         <p className={styles.text}> Biography:&nbsp;
                             <span className={styles.lightText}>
@@ -120,6 +114,12 @@ const PublicPersonDetail = ({ data, images, externalIds, combinedCredits }) => {
                                     {!showFullBiography ? 'Read more' : 'Read less'}
                                 </button>
                             )}
+                        </p>
+                    }
+                    {
+                        known_for_department &&
+                        <p className={styles.text}>Known for:
+                            <span className={styles.lightText}> {known_for_department}</span>
                         </p>
                     }
                     {
