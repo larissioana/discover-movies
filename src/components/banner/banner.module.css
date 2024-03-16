@@ -35,8 +35,10 @@
 
 @media screen and (max-width: 768px)
 {
-    .container
+    .container,
+    .onTopBanner
     {
         height: 20rem;
     }
+
 }
