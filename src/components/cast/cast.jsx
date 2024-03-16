@@ -4,15 +4,24 @@ import Link from 'next/link';
 import { imageUrlProfilesSmall } from '@/utils/fetchAPI';
 import { shortenTitle } from '@/utils/helpers';
 import NoImage from '../../assets/blankphoto.webp';
+import { useRef, useEffect } from 'react';
 
 const Cast = ({ credits }) => {
+    const refContainer = useRef(null);
+
+    useEffect(() => {
+        if (refContainer.current) {
+            refContainer.current.scrollLeft = 0;
+        }
+    }, [credits.cast])
+
     return (
         <div className={styles.container}>
             {
                 credits.cast.length > 0 &&
                 <h2 className={styles.title}>Top Cast</h2>
             }
-            <div className={styles.flexContainer}>
+            <div className={styles.flexContainer} ref={refContainer}>
                 {
                     credits?.cast?.map((credit) => {
                         const { id, character, name, profile_path } = credit;

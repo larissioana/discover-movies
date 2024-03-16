@@ -87,7 +87,7 @@ const PublicPersonDetail = ({ data, images, externalIds, combinedCredits }) => {
                         profile_path ?
                             <Image src={image} priority className={styles.image} loading="eager" alt={"public person biography"} width={300} height={450} />
                             :
-                            <Image src={NoImage} priority className={styles.image} loading="eager" alt={"public person biography"} width={300} height={450} />
+                            <Image src={NoImage} priority className={styles.image} loading="eager" alt={"public person biography"} width={200} height={250} />
                     }
                 </div>
                 <div className={styles.right}>

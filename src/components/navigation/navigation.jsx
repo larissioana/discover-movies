@@ -150,10 +150,6 @@ const Navigation = () => {
                   </div>
                 );
               }).slice(0, 8)}
-          {
-            searchedData.length === 0 &&
-            <p className={styles.title}>No results found for: {searchTerm}</p>
-          }
         </div>
       </>
       }

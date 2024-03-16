@@ -49,13 +49,10 @@ const Movies = ({ movies }) => {
                   />
                 </Link>
               }
-              {
-                vote !== "0.0" &&
-                <div className={styles.voteContainer}>
-                  <Image src={Star} width={20} height={20} alt={"star icon"} />
-                  <p className={styles.vote}>{vote}</p>
-                </div>
-              }
+              <div className={styles.voteContainer}>
+                <Image src={Star} width={20} height={20} alt={"star icon"} />
+                <p className={styles.vote}>{vote}</p>
+              </div>
               <h3 className={styles.title}>{titleShortened}</h3>
             </div>
 

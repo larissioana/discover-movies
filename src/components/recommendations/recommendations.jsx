@@ -79,7 +79,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                     <div className={styles.flexContainer} ref={containerRef}>
                         {
                             combinedCredits?.cast?.map((cast, index) => {
-                                const { id, poster_path, title, name, vote_average } = cast;
+                                const { id, poster_path, title, name, vote_average, character } = cast;
                                 const vote = parseFloat(vote_average).toFixed(1);
                                 const titleShortened = shortenTitle(title || name, 20);
                                 return (
@@ -124,7 +124,10 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                         }
                                         {
                                             poster_path &&
-                                            <h3 className={styles.titleMovie}>{titleShortened}</h3>
+                                            <>
+                                                <h3 className={styles.titleMovie}>{titleShortened}</h3>
+                                                <p className={styles.character}>as {character}</p>
+                                            </>
                                         }
                                     </div>
                                 )

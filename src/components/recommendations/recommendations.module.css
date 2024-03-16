@@ -44,7 +44,13 @@
 {
     font-size: clamp(.9rem, 2vw, 1rem);
     font-weight: bolder;
+}
+
+.character
+{
+    color: rgb(178, 176, 176);
     padding-bottom: 1rem;
+    padding-top: .3rem;
 }
 
 @media screen and (max-width: 400px)
