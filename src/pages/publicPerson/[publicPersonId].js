@@ -11,6 +11,8 @@ import TwitterIcon from '../../assets/twitter.png';
 import FacebookIcon from '../../assets/facebook.png';
 import Recommendations from '@/components/recommendations/recommendations';
 import NoImage from '../../assets/blankphoto.webp';
+import FemaleUserAvatar from '../../assets/userAvatarFemale.png';
+import MaleUserAvatar from '../../assets/userAvatarMale.png';
 
 const PublicPersonDetail = ({ data, images, externalIds, combinedCredits }) => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -87,11 +89,27 @@ const PublicPersonDetail = ({ data, images, externalIds, combinedCredits }) => {
                         profile_path ?
                             <Image src={image} priority className={styles.image} loading="eager" alt={"public person biography"} width={300} height={450} />
                             :
-                            <Image src={NoImage} priority className={styles.image} loading="eager" alt={"public person biography"} width={200} height={250} />
+                            <>
+                                {
+                                    gender > 0 ?
+                                        <>
+                                            {
+                                                gender === 1 ?
+                                                    <Image src={FemaleUserAvatar} priority className={styles.image} loading="eager" alt={"public person biography"} width={200} height={250} />
+                                                    :
+                                                    <Image src={MaleUserAvatar} priority className={styles.image} loading="eager" alt={"public person biography"} width={200} height={250} />
+                                            }
+                                        </>
+                                        :
+                                        <Image src={NoImage} priority className={styles.image} loading="eager" alt={"public person biography"} width={200} height={250} />
+                                }
+                            </>
                     }
                 </div>
                 <div className={styles.right}>
-                    <p className={styles.text}>Gender: <span className={styles.lightText}>{gender === 2 ? "Male" : "Female"}</span></p>
+                    {gender > 0 &&
+                        <p className={styles.text}>Gender: <span className={styles.lightText}>{gender === 2 ? "Male" : "Female"}</span></p>
+                    }
                     {
                         birthday &&
                         <p className={styles.text}>

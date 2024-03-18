@@ -5,6 +5,8 @@ import { imageUrlProfilesSmall } from '@/utils/fetchAPI';
 import { shortenTitle } from '@/utils/helpers';
 import NoImage from '../../assets/blankphoto.webp';
 import { useRef, useEffect } from 'react';
+import FemaleUserAvatar from '../../assets/userAvatarFemale.png';
+import MaleUserAvatar from '../../assets/userAvatarMale.png';
 
 const Cast = ({ credits }) => {
     const refContainer = useRef(null);
@@ -24,7 +26,7 @@ const Cast = ({ credits }) => {
             <div className={styles.flexContainer} ref={refContainer}>
                 {
                     credits?.cast?.map((credit) => {
-                        const { id, character, name, profile_path } = credit;
+                        const { id, character, name, profile_path, gender } = credit;
                         const shortenedCharacter = shortenTitle(character, 15);
                         return <div key={id}>
                             {
@@ -41,17 +43,33 @@ const Cast = ({ credits }) => {
                                         />
                                     </Link>
                                     :
-                                    <Link href={`/publicPerson/${id}`}>
-                                        <Image
-                                            src={NoImage}
-                                            width={150}
-                                            height={220}
-                                            alt={name}
-                                            className={styles.img}
-                                            loading="eager"
-                                            priority
-                                        />
-                                    </Link>
+                                    <>
+                                        {gender > 0 ?
+                                            <Link href={`/publicPerson/${id}`}>
+                                                <Image
+                                                    src={gender === 1 ? FemaleUserAvatar : MaleUserAvatar}
+                                                    width={150}
+                                                    height={220}
+                                                    alt={name}
+                                                    className={styles.img}
+                                                    loading="eager"
+                                                    priority
+                                                />
+                                            </Link>
+                                            :
+                                            <Link href={`/publicPerson/${id}`}>
+                                                <Image
+                                                    src={NoImage}
+                                                    width={150}
+                                                    height={220}
+                                                    alt={name}
+                                                    className={styles.img}
+                                                    loading="eager"
+                                                    priority
+                                                />
+                                            </Link>
+                                        }
+                                    </>
                             }
                             <h3 className={styles.name}>{name}</h3>
                             <h4 className={styles.character}>{character !== "" ? `as ${shortenedCharacter}` : ""}</h4>

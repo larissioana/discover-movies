@@ -8,6 +8,7 @@ import Cast from '../cast/cast';
 import ImdbIcon from '../../assets/imdb.png';
 import Seasons from '../seasons/seasons';
 import { formatDate } from '@/utils/helpers';
+import NoImage from '../../assets/no-image.webp';
 
 const Details = ({
     image,
@@ -91,8 +92,10 @@ const Details = ({
             <div className={styles.movieDetails}>
                 <div className={styles.left}>
                     {
-                        posterPath &&
-                        <Image src={image} className={styles.image} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
+                        posterPath ?
+                            <Image src={image} className={styles.image} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
+                            :
+                            <Image src={NoImage} className={styles.image} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
                     }
                 </div>
                 <div className={styles.right}>

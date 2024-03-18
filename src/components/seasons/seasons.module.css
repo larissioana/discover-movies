@@ -37,7 +37,8 @@
 }
 
 .episodes,
-.date
+.date,
+.text
 {
     font-size: clamp(.9rem, 2vw, 1.2rem);
     line-height: 3rem;
@@ -46,6 +47,15 @@
 .name
 {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.text
+{
+    display: block;
+    padding-top: 1rem;
+    padding-left: .3rem;
+    font-weight: bolder;
+    color: rgb(225, 148, 5);
 }
 
 .overview

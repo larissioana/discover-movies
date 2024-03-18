@@ -44,6 +44,7 @@
 {
     font-size: clamp(.9rem, 2vw, 1rem);
     font-weight: bolder;
+    padding-bottom: 1rem;
 }
 
 .character

@@ -74,72 +74,40 @@ const Navigation = () => {
             searchedData
               .map((item) => {
                 const { id, original_title, original_name, poster_path, profile_path, media_type } = item;
+                const href = media_type === "tv" ? `/tvSeries/${id}` : media_type === "movie" ? `/movie/${id}` : `/publicPerson/${id}`;
+
                 return (
                   <div key={id} className={styles.suggestions}>
                     {(poster_path || profile_path) ? (
-                      <>
-                        {media_type === 'tv' && (
-                          <Link href={`/tvSeries/${id}`}>
-                            <Image
-                              src={`${imageUrl}${poster_path}`}
-                              width={70}
-                              height={90}
-                              alt={original_title}
-                              loading="eager"
-                              priority
-                              className={styles.img}
-                              style={{
-                                objectFit: "cover"
-                              }}
-                            />
-                          </Link>
-                        )}
-                        {media_type === 'movie' && (
-                          <Link href={`/movie/${id}`}>
-                            <Image
-                              src={`${imageUrl}${poster_path}`}
-                              width={70}
-                              height={90}
-                              alt={original_title}
-                              loading="eager"
-                              priority
-                              className={styles.img}
-                              style={{
-                                objectFit: "cover"
-                              }}
-                            />
-                          </Link>
-                        )}
-                        {media_type === 'person' && (
-                          <Link href={`/publicPerson/${id}`}>
-                            <Image
-                              src={`${imageUrl}${profile_path}`}
-                              width={70}
-                              height={90}
-                              alt={original_name}
-                              loading="eager"
-                              priority
-                              className={styles.img}
-                              style={{
-                                objectFit: "cover"
-                              }}
-                            />
-                          </Link>
-                        )}
-                      </>
+                      <Link href={href}>
+                        <Image
+                          src={`${imageUrl}${poster_path || profile_path}`}
+                          width={70}
+                          height={90}
+                          alt={original_title}
+                          loading="eager"
+                          priority
+                          className={styles.img}
+                          style={{
+                            objectFit: "cover"
+                          }}
+                        />
+                      </Link>
                     ) : (
-                      <Image
-                        src={NoImage}
-                        width={70}
-                        height={90}
-                        alt={original_name}
-                        loading="eager"
-                        priority
-                        className={styles.img}
-                        style={{
-                          objectFit: "cover"
-                        }}
-                      />
+                      <Link href={href}>
+                        <Image
+                          src={NoImage}
+                          width={70}
+                          height={90}
+                          alt={original_name}
+                          loading="eager"
+                          priority
+                          className={styles.img}
+                          style={{
+                            objectFit: "cover"
+                          }}
+                        />
+                      </Link>
                     )}
                     {
                       original_title ?

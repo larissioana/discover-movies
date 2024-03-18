@@ -27,28 +27,25 @@ const Seasons = ({ seasons }) => {
                 <div className={styles.left}>
                     {
                         poster_path ?
-                            <Link href={`/tvSeries/${tvSeriesId}/${season_number}`}>
-                                <Image
-                                    src={`${imageUrl}${poster_path}`}
-                                    width={185}
-                                    alt={name}
-                                    height={200}
-                                    loading="lazy"
-                                    className={styles.img}
-                                />
-                            </Link>
+                            <Image
+                                src={`${imageUrl}${poster_path}`}
+                                width={185}
+                                alt={name}
+                                height={200}
+                                loading="lazy"
+                                className={styles.img}
+                            />
                             :
-                            <Link href={`/tvSeries/${tvSeriesId}/${season_number}`}>
-                                <Image
-                                    src={NoImage}
-                                    width={200}
-                                    alt={name}
-                                    height={200}
-                                    loading="lazy"
-                                    className={styles.img}
-                                />
-                            </Link>
+                            <Image
+                                src={NoImage}
+                                width={200}
+                                alt={name}
+                                height={200}
+                                loading="lazy"
+                                className={styles.img}
+                            />
                     }
+                    <Link href={`/tvSeries/${tvSeriesId}/${season_number}`} className={styles.text}>See episodes</Link>
                 </div>
                 <div className={styles.right}>
                     <h3 className={styles.name}>{name}</h3>

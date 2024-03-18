@@ -5,6 +5,7 @@ import Star from '../../assets/star.png';
 import { shortenTitle } from '@/utils/helpers';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
+import NoImage from '../../assets/no-image.webp';
 
 const Recommendations = ({ recommendations, title, combinedCredits }) => {
     const containerRef = useRef(null);
@@ -79,55 +80,47 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                     <div className={styles.flexContainer} ref={containerRef}>
                         {
                             combinedCredits?.cast?.map((cast, index) => {
-                                const { id, poster_path, title, name, vote_average, character } = cast;
+                                const { id, poster_path, title, name, vote_average, character, media_type } = cast;
                                 const vote = parseFloat(vote_average).toFixed(1);
                                 const titleShortened = shortenTitle(title || name, 20);
+                                const href = media_type === "movie" ? `/movie/${id}` : `/tvSeries/${id}`;
                                 return (
                                     <div key={index} className={styles.recommendation}>
-                                        {title && poster_path ?
-                                            <Link href={`/movie/${id}`}>
-                                                <Image
-                                                    src={`${imageUrl}${poster_path}`}
-                                                    width={180}
-                                                    height={260}
-                                                    alt={title || name}
-                                                    loading="eager"
-                                                    priority
-                                                    className={styles.img}
-                                                />
-                                            </Link>
-                                            :
-                                            <>
-                                                {
-                                                    poster_path &&
+                                        {
+                                            poster_path ?
+                                                <Link href={href}>
+                                                    <Image
+                                                        src={`${imageUrl}${poster_path}`}
+                                                        width={180}
+                                                        height={260}
+                                                        alt={title || name}
+                                                        loading="eager"
+                                                        priority
+                                                        className={styles.img}
+                                                    />
+                                                </Link>
+                                                :
+                                                <Link href={href}>
+                                                    <Image
+                                                        src={NoImage}
+                                                        width={180}
+                                                        height={250}
+                                                        alt={title || name}
+                                                        loading="eager"
+                                                        priority
+                                                        className={styles.img}
+                                                    />
+                                                </Link>
+                                        }
+                                        <div className={styles.voteContainer}>
+                                            <Image src={Star} width={20} height={20} alt={"star icon"} />
+                                            <p className={styles.vote}>{vote}</p>
+                                        </div>
 
-                                                    <Link href={`/tvSeries/${id}`}>
-                                                        <Image
-                                                            src={`${imageUrl}${poster_path}`}
-                                                            width={180}
-                                                            height={250}
-                                                            alt={title || name}
-                                                            loading="eager"
-                                                            priority
-                                                            className={styles.img}
-                                                        />
-                                                    </Link>
-                                                }
-                                            </>
-                                        }
+                                        <h3 className={styles.titleMovie}>{titleShortened}</h3>
                                         {
-                                            poster_path &&
-                                            <div className={styles.voteContainer}>
-                                                <Image src={Star} width={20} height={20} alt={"star icon"} />
-                                                <p className={styles.vote}>{vote}</p>
-                                            </div>
-                                        }
-                                        {
-                                            poster_path &&
-                                            <>
-                                                <h3 className={styles.titleMovie}>{titleShortened}</h3>
-                                                <p className={styles.character}>as {character}</p>
-                                            </>
+                                            character &&
+                                            <p className={styles.character}>as {character}</p>
                                         }
                                     </div>
                                 )

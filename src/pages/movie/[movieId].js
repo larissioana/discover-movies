@@ -37,7 +37,7 @@ const MovieDetails = ({ data, images, videos, recommendations, credits }) => {
             </Head>
             <Navigation />
             <Details
-                firstTitle={"Movies"}
+                firstTitle={"Movie"}
                 image={imageURL}
                 vote={vote_average}
                 date={year}
