@@ -33,6 +33,7 @@
   position: sticky;
   top: 10;
   left: 0;
+  overflow: hidden;
 }
 
 .suggestions
