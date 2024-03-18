@@ -8,6 +8,7 @@
     row-gap: 2rem;
     column-gap: 2rem;
     flex-wrap: wrap;
+    width: 100%;
     background-color: rgb(48, 45, 45);
 }
 
