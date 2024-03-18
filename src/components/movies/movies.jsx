@@ -55,7 +55,6 @@ const Movies = ({ movies }) => {
               </div>
               <h3 className={styles.title}>{titleShortened}</h3>
             </div>
-
           );
         })}
       </div>

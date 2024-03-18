@@ -1,11 +1,42 @@
 .episodeWrapper
 {
-    padding: 2rem;
+    border: 1px solid rgb(91, 90, 90);
+    border-radius: .5rem;
     display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    background-color: rgb(48, 45, 45);
+}
+
+.wrapper
+{
+    display: flex;
     align-items: flex-start;
-    border-bottom: 2px solid rgb(62, 62, 62);
+    gap: 3rem;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+.voteContainer
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: .5rem;
+}
+  
+.vote
+{
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgb(164, 162, 162);
+}
+  
+.right
+{
+    padding: 1rem .5rem;
 }
 
 .title
@@ -15,28 +46,27 @@
     font-weight: bolder;
     color: rgb(240, 226, 226);
     padding-bottom: .5rem;
+    width: 100%;
 }
 
 .episodeNr
 {
     font-size: clamp(1rem, 2vw, 1.2rem);
-    color: rgb(176, 171, 171);
-    padding-bottom: 1rem;
+    color: rgb(220, 135, 75);
 }
 
 .overview
 {
     width: 70%;
     color: rgb(176, 171, 171);
-    padding-top: .5rem;
-    padding-bottom: 1rem;
     font-size: clamp(1rem, 2vw, 1.1rem);
+    padding: 0rem .5rem 1rem .5rem;
 }
 
 .episodeImage
 {
     object-fit: cover;
-    border-radius: .5rem;
+    border-top-left-radius: .5rem;
     animation: animation .5s ease-in;
 }
 
@@ -49,18 +79,13 @@
         opacity: 1;
     }
 }
-.goBack
-{
-    padding: 2rem;
-    margin-top: 2rem;
-    font-size: 1.4rem;
-}
 
 @media screen and (max-width: 768px)
 {
     .overview
     {
         width: 100%;
+        margin-top: -2rem;
     }
 }
 
