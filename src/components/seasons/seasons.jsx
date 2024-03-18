@@ -29,9 +29,9 @@ const Seasons = ({ seasons }) => {
                         poster_path ?
                             <Image
                                 src={`${imageUrl}${poster_path}`}
-                                width={185}
+                                width={285}
                                 alt={name}
-                                height={200}
+                                height={250}
                                 loading="lazy"
                                 className={styles.img}
                             />
@@ -45,7 +45,6 @@ const Seasons = ({ seasons }) => {
                                 className={styles.img}
                             />
                     }
-                    <Link href={`/tvSeries/${tvSeriesId}/${season_number}`} className={styles.text}>See episodes</Link>
                 </div>
                 <div className={styles.right}>
                     <h3 className={styles.name}>{name}</h3>
@@ -60,6 +59,7 @@ const Seasons = ({ seasons }) => {
                             {overview}
                         </p>
                     }
+                    <Link href={`/tvSeries/${tvSeriesId}/${season_number}`} className={styles.text}>See episodes</Link>
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@
 .episodeNr
 {
     font-size: clamp(1rem, 2vw, 1.2rem);
-    color: rgb(220, 135, 75);
+    color: rgb(177, 173, 171);
 }
 
 .overview
@@ -86,6 +86,11 @@
     {
         width: 100%;
         margin-top: -2rem;
+    }
+
+    .title
+    {
+        margin-top: -1.5rem;
     }
 }
 
