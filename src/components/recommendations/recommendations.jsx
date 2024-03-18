@@ -1,11 +1,11 @@
 import styles from './recommendations.module.css';
 import { imageUrl } from '@/utils/fetchAPI';
 import Image from 'next/image';
-import Star from '../../assets/star.png';
 import { shortenTitle } from '@/utils/helpers';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import NoImage from '../../assets/no-image.webp';
+import Vote from '../vote/vote';
 
 const Recommendations = ({ recommendations, title, combinedCredits }) => {
     const containerRef = useRef(null);
@@ -27,7 +27,6 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                         {
                             recommendations?.results?.map((recommendation) => {
                                 const { id, poster_path, title, name, vote_average } = recommendation;
-                                const vote = parseFloat(vote_average).toFixed(1);
                                 const titleShortened = shortenTitle(title || name, 20);
                                 return (
                                     <div key={id} className={styles.recommendation}>
@@ -62,10 +61,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                         }
                                         {
                                             poster_path &&
-                                            <div className={styles.voteContainer}>
-                                                <Image src={Star} width={20} height={20} alt={"star icon"} />
-                                                <p className={styles.vote}>{vote}</p>
-                                            </div>
+                                            <Vote vote={vote_average} />
                                         }
                                         {
                                             poster_path &&
@@ -81,7 +77,6 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                         {
                             combinedCredits?.cast?.map((cast, index) => {
                                 const { id, poster_path, title, name, vote_average, character, media_type } = cast;
-                                const vote = parseFloat(vote_average).toFixed(1);
                                 const titleShortened = shortenTitle(title || name, 20);
                                 const href = media_type === "movie" ? `/movie/${id}` : `/tvSeries/${id}`;
                                 return (
@@ -112,11 +107,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                                     />
                                                 </Link>
                                         }
-                                        <div className={styles.voteContainer}>
-                                            <Image src={Star} width={20} height={20} alt={"star icon"} />
-                                            <p className={styles.vote}>{vote}</p>
-                                        </div>
-
+                                        <Vote vote={vote_average} />
                                         <h3 className={styles.titleMovie}>{titleShortened}</h3>
                                         {
                                             character &&

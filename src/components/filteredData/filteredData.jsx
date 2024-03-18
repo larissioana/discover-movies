@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { imageUrl } from "@/utils/fetchAPI";
-import StarIcon from '../../assets/star.png';
+import Vote from "../vote/vote";
 import styles from './filteredData.module.css';
 import { shortenTitle } from "@/utils/helpers";
 
@@ -13,7 +13,6 @@ const FilteredData = ({ data }) => {
                     const { contentType, id, name, poster_path, vote_average, title } = result;
                     const shortenedName = shortenTitle(name, 20);
                     const shortenedTitle = shortenTitle(title, 20);
-                    const vote = Math.floor(vote_average).toFixed(1);
                     return <div key={id} className={styles.paginationContainer}>
                         {
                             contentType === "tv" ?
@@ -35,10 +34,7 @@ const FilteredData = ({ data }) => {
                                     {
                                         poster_path &&
                                         <>
-                                            <div className={styles.voteContainer}>
-                                                <Image src={StarIcon} width={20} height={20} alt={"star icon"} />
-                                                <p className={styles.vote}>{vote}</p>
-                                            </div>
+                                            <Vote vote={vote_average} />
                                             <h3 className={styles.title}>{shortenedName}</h3>
                                         </>
                                     }
@@ -61,10 +57,7 @@ const FilteredData = ({ data }) => {
                                     {
                                         poster_path &&
                                         <>
-                                            <div className={styles.voteContainer}>
-                                                <Image src={StarIcon} width={20} height={20} alt={"star icon"} />
-                                                <p className={styles.vote}>{vote}</p>
-                                            </div>
+                                            <Vote vote={vote_average} />
                                             <h3 className={styles.title}>{shortenedTitle}</h3>
                                         </>
                                     }

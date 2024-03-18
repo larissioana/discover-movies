@@ -1,0 +1,13 @@
+.voteContainer
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: .5rem;
+}
+  
+.vote
+{
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: rgb(164, 162, 162);
+}

@@ -4,6 +4,7 @@
     object-position: top;
     border-radius: .3rem;
     transition: filter .3s ease-in;
+    margin-bottom: .8rem;
 }
 
 .posterImage:hover
@@ -22,25 +23,11 @@
     padding-top: 3rem;
 }
 
-.voteContainer
-{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding-top: 0.9rem;
-}
-.vote
-{
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: rgb(164, 162, 162);
-}
-
 .title
 {
     font-size: clamp(0.9rem, 2vw, 1rem);
     color: rgb(164, 162, 162);
     width: 12rem;
-    padding-top: 0.6rem;
     line-height: 1.5;
 }
 

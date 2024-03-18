@@ -9,6 +9,7 @@ import ImdbIcon from '../../assets/imdb.png';
 import Seasons from '../seasons/seasons';
 import { formatDate } from '@/utils/helpers';
 import NoImage from '../../assets/no-image.webp';
+import Vote from '../vote/vote';
 
 const Details = ({
     image,
@@ -68,11 +69,9 @@ const Details = ({
                     <p className={styles.language}>({language})</p>
                     {
                         vote !== 0 &&
-                        <p className={styles.vote}>
-                            <Image src={StarIcon} width={20} height={20} className={styles.star} alt="star icon for ratings" />
-
-                            {Math.floor(vote).toFixed(1)}
-                        </p>
+                        <div className={styles.vote}>
+                            <Vote vote={vote} />
+                        </div>
                     }
                 </div>
                 <h4 className={styles.tagline}>{tagline}</h4>

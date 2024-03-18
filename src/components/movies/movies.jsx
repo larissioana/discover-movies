@@ -1,7 +1,7 @@
 import styles from "./movies.module.css";
 import { imageUrl } from "@/utils/fetchAPI";
 import Image from "next/image";
-import Star from "../../assets/star.png";
+import Vote from "../vote/vote";
 import { shortenTitle } from "@/utils/helpers";
 import Link from "next/link";
 import { useEffect, useRef } from 'react';
@@ -20,7 +20,6 @@ const Movies = ({ movies }) => {
       <div className={styles.container} ref={refContainer}>
         {movies.results.map((result) => {
           const { id, title, name, poster_path, vote_average } = result;
-          const vote = parseFloat(vote_average).toFixed(1);
           const titleShortened = shortenTitle(title || name, 20);
           return (
             <div key={id} className={styles.slider}>
@@ -49,10 +48,7 @@ const Movies = ({ movies }) => {
                   />
                 </Link>
               }
-              <div className={styles.voteContainer}>
-                <Image src={Star} width={20} height={20} alt={"star icon"} />
-                <p className={styles.vote}>{vote}</p>
-              </div>
+              <Vote vote={vote_average} />
               <h3 className={styles.title}>{titleShortened}</h3>
             </div>
           );

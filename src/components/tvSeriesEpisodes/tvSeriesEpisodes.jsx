@@ -3,7 +3,7 @@ import Head from "next/head";
 import { IMAGE_URL_342 } from "@/utils/fetchAPI";
 import styles from './tvSeriesEpisodes.module.css';
 import NoImage from '../../assets/no-image.webp';
-import Star from '../../assets/star.png';
+import Vote from "../vote/vote";
 
 const TvSeriesEpisodes = ({ episode }) => {
     const {
@@ -50,12 +50,7 @@ const TvSeriesEpisodes = ({ episode }) => {
                         {name &&
                             <h3 className={styles.title}>{name}</h3>
                         }
-                        {
-                            <div className={styles.voteContainer}>
-                                <Image src={Star} width={20} height={20} alt={"star icon"} />
-                                <p className={styles.vote}>{Math.floor(vote_average).toFixed(1)}</p>
-                            </div>
-                        }
+                        <Vote vote={vote_average} />
                         {episode_number &&
                             <h5 className={styles.episodeNr}><b>Episode number:</b> {episode_number}</h5>
                         }
