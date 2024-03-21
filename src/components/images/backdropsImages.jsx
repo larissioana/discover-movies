@@ -23,8 +23,8 @@ const BackdropsImages = ({ backdrop }) => {
                             loading="eager"
                             priority
                             src={`${imageUrlBackdrops}${file_path}`}
-                            width={250}
-                            height={150}
+                            width={230}
+                            height={120}
                             alt={"more images"}
                         />
                     </a>

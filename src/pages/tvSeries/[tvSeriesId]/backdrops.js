@@ -5,6 +5,7 @@ import Navigation from '@/components/navigation/navigation';
 import Head from 'next/head';
 import styles from '../../../pages/movie/movieId.module.css';
 import BackdropsImages from '@/components/images/backdropsImages';
+import Loading from '@/components/loading/loading';
 
 const Backdrops = ({ data, images }) => {
     return (
@@ -19,13 +20,18 @@ const Backdrops = ({ data, images }) => {
                 images.backdrops.length > 0 &&
                 <h3 className={styles.postersTitle}>Posters ({images.backdrops.length})</h3>
             }
-            <div className={styles.flexContainer}>
-                {
-                    images.backdrops.map((backdrop) => {
-                        return <BackdropsImages key={backdrop.id} backdrop={backdrop} />
-                    })
-                }
-            </div>
+            {
+                images.backdrops ?
+                    <div className={styles.flexContainer}>
+                        {
+                            images.backdrops.map((backdrop) => {
+                                return <BackdropsImages key={backdrop.id} backdrop={backdrop} />
+                            })
+                        }
+                    </div>
+                    :
+                    <Loading />
+            }
         </>
     )
 };

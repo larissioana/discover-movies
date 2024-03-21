@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IMAGE_URL_342, imageUrlBackdrop } from "@/utils/fetchAPI";
+import { IMAGE_URL_500, imageUrlBackdrop } from "@/utils/fetchAPI";
 import styles from './postersImages.module.css';
 import Info from "./info";
 
@@ -11,20 +11,20 @@ const PostersImages = ({ poster }) => {
         vote_average
     } = poster;
 
-    const imageUrl = `${imageUrlBackdrop}${file_path}`;
+    const imageURL = `${imageUrlBackdrop}${file_path}`;
     return (
         <div className={styles.container}>
             {
                 file_path &&
                 <div className={styles.postersContainer}>
-                    <a target="_blank" href={imageUrl}>
+                    <a target="_blank" href={imageURL}>
                         <Image
                             className={styles.img}
                             loading="eager"
                             priority
-                            src={`${IMAGE_URL_342}${file_path}`}
+                            src={`${IMAGE_URL_500}${file_path}`}
                             width={200}
-                            height={300}
+                            height={280}
                             alt={"more images"}
                         />
                     </a>

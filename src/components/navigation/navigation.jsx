@@ -93,27 +93,18 @@ const Navigation = () => {
                           }}
                         />
                       </Link>
-                    ) : (
-                      <Link href={href}>
-                        <Image
-                          src={NoImage}
-                          width={70}
-                          height={90}
-                          alt={original_name}
-                          loading="eager"
-                          priority
-                          className={styles.img}
-                          style={{
-                            objectFit: "cover"
-                          }}
-                        />
-                      </Link>
-                    )}
+                    ) : null}
                     {
-                      original_title ?
-                        <h5 className={styles.title}>{original_title}</h5>
-                        :
-                        <h5 className={styles.title}>{original_name}</h5>
+                      poster_path || profile_path ?
+                        <>
+                          {
+                            original_title ?
+                              <h5 className={styles.title}>{original_title}</h5>
+                              :
+                              <h5 className={styles.title}>{original_name}</h5>
+                          }
+                        </>
+                        : null
                     }
                   </div>
                 );

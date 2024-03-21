@@ -5,6 +5,7 @@ import Navigation from '@/components/navigation/navigation';
 import Head from 'next/head';
 import PostersImages from '@/components/images/postersImages';
 import styles from '../../../pages/movie/movieId.module.css';
+import Loading from '@/components/loading/loading';
 
 const Posters = ({ data, images }) => {
     return (
@@ -19,13 +20,18 @@ const Posters = ({ data, images }) => {
                 images.posters.length > 0 &&
                 <h3 className={styles.postersTitle}>Posters ({images.posters.length})</h3>
             }
-            <div className={styles.flexContainer}>
-                {
-                    images.posters.map((poster) => {
-                        return <PostersImages key={poster.id} poster={poster} />
-                    })
-                }
-            </div>
+            {
+                images.posters ?
+                    <div className={styles.flexContainer}>
+                        {
+                            images.posters.map((poster) => {
+                                return <PostersImages key={poster.id} poster={poster} />
+                            })
+                        }
+                    </div>
+                    :
+                    <Loading />
+            }
         </>
     )
 };

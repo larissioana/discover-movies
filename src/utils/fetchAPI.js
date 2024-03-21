@@ -16,6 +16,7 @@ export const imageUrlProfiles = 'http://image.tmdb.org/t/p/h632/';
 export const imageUrlProfilesSmall = 'http://image.tmdb.org/t/p/w185/';
 export const imageUrlBackdrop = 'http://image.tmdb.org/t/p/original/';
 export const IMAGE_URL_342 = 'https://image.tmdb.org/t/p/w342';
+export const IMAGE_URL_500 = 'https://image.tmdb.org/t/p/w500';
 
 export const fetchMovies = async (mediaType, list) => {
     const data = await fetch(`${BASE_URL}${mediaType}/${list}?language=en-US&page=1`, options);

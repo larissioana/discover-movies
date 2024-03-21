@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation/navigation";
 import { fetchAPIId } from "@/utils/fetchAPI";
 import BackdropsImages from "@/components/images/backdropsImages";
 import styles from '../movieId.module.css';
+import Loading from "@/components/loading/loading";
 
 const Backdrops = ({ data, images }) => {
     return (
@@ -17,13 +18,26 @@ const Backdrops = ({ data, images }) => {
             {images.backdrops.length > 0 &&
                 <h3 className={styles.backdropsTitle}>Backdrops ({images.backdrops.length})</h3>
             }
-            <div className={styles.flexContainer}>
-                {
-                    images.backdrops.map((backdrop) => {
-                        return <BackdropsImages key={backdrop.id} backdrop={backdrop} />
-                    })
-                }
-            </div>
+            {
+                images.backdrops ?
+                    <>
+                        {
+                            images.backdrops.length > 0 ?
+
+                                <div className={styles.flexContainer}>
+                                    {
+                                        images.backdrops.map((backdrop) => {
+                                            return <BackdropsImages key={backdrop.id} backdrop={backdrop} />
+                                        })
+                                    }
+                                </div>
+                                :
+                                <p className={styles.noTranslation}>No backdrops available &#128532;</p>
+                        }
+                    </>
+                    :
+                    <Loading />
+            }
         </>
     )
 }
