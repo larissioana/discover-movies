@@ -1,9 +1,7 @@
 import Navigation from '@/components/navigation/navigation';
 import { fetchAPIId, imageUrl } from '@/utils/fetchAPI';
-import React from 'react'
 import Details from '@/components/details/details';
 import Head from 'next/head';
-
 const MovieDetails = ({ data, images, videos, recommendations, credits }) => {
     const {
         genres,
@@ -29,6 +27,7 @@ const MovieDetails = ({ data, images, videos, recommendations, credits }) => {
     const hours = Math.floor(runtime / 60);
     const minutes = runtime % 60;
     const imageURL = `${imageUrl}${poster_path}`;
+
     return (
         <>
             <Head>

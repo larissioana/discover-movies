@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import StarIcon from '../../assets/star.png';
+import DropdownMenu from '../dropdownMenu/dropdownMenu';
 import styles from './details.module.css';
 import WebIcon from '../../assets/web.png';
 import Media from '../media/media';
@@ -62,6 +62,7 @@ const Details = ({
 
     return (
         <>
+            <DropdownMenu />
             <div className={styles.movieContainer}>
                 <h5 className={styles.movieTitle}>{firstTitle}</h5>
                 <div className={styles.flexContainer2}>

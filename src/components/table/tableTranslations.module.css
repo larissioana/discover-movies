@@ -1,0 +1,41 @@
+
+.tableData
+{
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 1rem;
+}
+
+.translationTitleContainer
+{
+    padding-top: 1rem;
+}
+
+.tableData th,
+.tableData td
+{
+    border: 1px solid rgb(167, 106, 41);
+    background: rgb(45, 44, 44);
+    border-top-right-radius: .3rem;
+    border-top-left-radius: .3rem;
+    color: rgb(218, 217, 217);
+}
+
+.tableData th
+{
+    background: rgb(45, 44, 44);
+    padding: .9rem;
+    text-align: left;
+}
+
+.tableData td
+{
+    padding: .9rem;
+    text-align: left;
+}
+
+.tableData tr:nth-child(even)
+{
+    background: rgb(180, 180, 84);
+    color: blue;
+}

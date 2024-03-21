@@ -16,6 +16,7 @@ export const MovieProvider = ({ children }) => {
     const [activeGenre, setActiveGenre] = useState(null);
     const [activeContentType, setActiveContentType] = useState("");
     const [resetPage, setResetPage] = useState(false);
+    const [selectedLanguage, setSelectedLanguage] = useState("English");
 
     const updateActiveContentType = (contentType) => {
         setActiveContentType(contentType);
@@ -45,7 +46,9 @@ export const MovieProvider = ({ children }) => {
         setActiveContentType,
         updateActiveContentType,
         resetPage,
-        setResetPage
+        setResetPage,
+        selectedLanguage,
+        setSelectedLanguage
     }
 
     return (

@@ -29,9 +29,9 @@ const Seasons = ({ seasons }) => {
                         poster_path ?
                             <Image
                                 src={`${imageUrl}${poster_path}`}
-                                width={285}
+                                width={205}
                                 alt={name}
-                                height={250}
+                                height={220}
                                 loading="lazy"
                                 className={styles.img}
                             />
@@ -49,8 +49,8 @@ const Seasons = ({ seasons }) => {
                 <div className={styles.right}>
                     <h3 className={styles.name}>{name}</h3>
                     <div className={styles.flexContainer}>
-                        <p className={styles.date}>{formattedDate}.</p>
-                        <p className={styles.episodes}>{episode_count} Episodes</p>
+                        <p className={styles.date}>{formattedDate}. </p>
+                        <p className={styles.episodes}>&nbsp; {episode_count} Episodes</p>
                     </div>
                     {
                         overview &&

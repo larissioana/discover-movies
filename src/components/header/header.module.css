@@ -1,0 +1,32 @@
+.container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 3rem;
+    background: rgb(42, 41, 41);
+}
+
+.left
+{
+    padding-left: 2rem;
+}
+
+.goBack
+{
+    font-size: clamp(.9rem, 2vw, 1rem);
+    color: rgb(205, 154, 15);
+    cursor: pointer;
+}
+
+.img
+{
+    object-fit: cover;
+}
+
+.title
+{
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    padding-bottom: .7rem;
+    line-height: 1.5rem;
+}

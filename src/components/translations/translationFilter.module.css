@@ -1,0 +1,24 @@
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    background: rgb(45, 44, 44);
+    padding: 1rem 2rem;
+    color: rgb(218, 217, 217);
+    width: 100%;
+}
+
+.language
+{
+    border: 1px solid transparent;
+    background: rgb(70, 68, 68);
+    padding: .3rem;
+}
+
+.container:hover
+{
+    cursor: pointer;
+    background-color: rgb(85, 83, 83);
+}

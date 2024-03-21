@@ -1,5 +1,7 @@
 import TvSeriesEpisodes from "@/components/tvSeriesEpisodes/tvSeriesEpisodes";
 import { fetchTvSeasons } from "@/utils/fetchAPI";
+import { useRouter } from "next/router";
+import Navigation from "@/components/navigation/navigation";
 
 export async function getServerSideProps(context) {
     const tvSeriesId = context.query.season?.[0] || null;
@@ -16,16 +18,22 @@ export async function getServerSideProps(context) {
     }
 }
 const Season = ({ seasonDetails }) => {
+    const router = useRouter();
+
+    const handleGoBack = () => {
+        router.back();
+    };
 
     return (
         <>
+            <Navigation />
             <div style={{
-                display: "flex",
-                justifyContent: "flexStart",
-                alignItems: "flexStart",
-                flexDirection: "column",
-                padding: "1rem 2rem"
+                padding: "2rem"
             }}>
+                <h3 style={{
+                    cursor: "pointer",
+                    paddingBottom: "3rem"
+                }} onClick={handleGoBack}>Go back</h3>
                 {seasonDetails.episodes?.map((episode) => {
                     return <TvSeriesEpisodes episode={episode} key={episode.id} />
                 })}

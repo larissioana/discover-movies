@@ -1,0 +1,72 @@
+.container
+{
+    height: 3rem;
+    background: rgb(39, 38, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    border-bottom: 1px solid rgb(106, 102, 102);
+    color: rgb(204, 202, 202);
+}
+
+.dropdown
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    position: relative;
+}
+
+.dropdownTitle
+{
+    font-weight: lighter;
+    cursor: pointer;
+    font-size: clamp(.9rem, 2vw, 1rem);
+}
+.dropDownMenu
+{
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    height: auto;
+    background: rgb(39, 38, 38);
+    padding: 1rem 4rem;
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(106, 102, 102);
+    z-index: 10;
+    color: rgb(204, 202, 202);
+}
+
+.links
+{
+    width: 100%;
+    padding-bottom: .3rem;
+    cursor: pointer;
+}
+
+.links:hover
+{
+    color: rgb(230, 159, 28);
+}
+
+.arrowDown
+{
+    vertical-align:text-top;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px)
+{
+    .dropDownMenu
+    {
+       left: -4rem;
+
+    }
+
+   
+}

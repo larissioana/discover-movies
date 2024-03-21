@@ -1,29 +1,12 @@
-.episodeWrapper
-{
-    border: 1px solid rgb(91, 90, 90);
-    border-radius: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    row-gap: 2rem;
-    column-gap: 2rem;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: rgb(48, 45, 45);
-}
-
 .wrapper
 {
     display: flex;
     align-items: flex-start;
-    gap: 3rem;
-    flex-direction: column;
-    padding-bottom: 2rem;
-}
-  
-.right
-{
-    padding: 1rem .5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(93, 91, 89);
 }
 
 .title
@@ -39,7 +22,8 @@
 .episodeNr
 {
     font-size: clamp(1rem, 2vw, 1.2rem);
-    color: rgb(177, 173, 171);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
 .overview
@@ -47,14 +31,19 @@
     width: 70%;
     color: rgb(176, 171, 171);
     font-size: clamp(1rem, 2vw, 1.1rem);
-    padding: 0rem .5rem 1rem .5rem;
 }
 
 .episodeImage
 {
     object-fit: cover;
-    border-top-left-radius: .5rem;
     animation: animation .5s ease-in;
+}
+
+.right
+
+{
+    width: 30rem;
+    height: auto;
 }
 
 @keyframes animation
@@ -72,12 +61,6 @@
     .overview
     {
         width: 100%;
-        margin-top: -2rem;
-    }
-
-    .title
-    {
-        margin-top: -1.5rem;
     }
 }
 
@@ -86,6 +69,11 @@
     .episodeImage
     {
         width: 270px
+    }
+
+    .title
+    {
+        padding: 0;
     }
 } 
 

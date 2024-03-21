@@ -1,0 +1,64 @@
+.container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3rem 2rem;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+}
+
+.left,
+.right
+{
+    flex: 1;
+}
+
+.img
+{
+    object-fit: cover;
+    border-radius: .2rem;
+}
+
+.flexContainer
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.title
+{
+    margin-bottom: 3rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: rgb(193, 190, 190);
+}
+
+.originalName,
+.character
+{
+    color: rgb(193, 190, 190);
+}
+
+.originalName
+{
+    font-size: clamp(.9rem, 2vw, 1rem);
+    font-weight: bolder;
+}
+
+.character
+{
+    padding-top: .5rem;
+    font-size: clamp(.8rem, 2vw, .9rem);
+}
+
+.noCast
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding-top: 3rem;
+}

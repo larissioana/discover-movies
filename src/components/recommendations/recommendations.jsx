@@ -1,6 +1,7 @@
 import styles from './recommendations.module.css';
 import { imageUrl } from '@/utils/fetchAPI';
 import Image from 'next/image';
+
 import { shortenTitle } from '@/utils/helpers';
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
@@ -17,9 +18,13 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
         }
     }, [recommendations, combinedCredits]);
 
+    const showTitle = combinedCredits?.cast?.length > 0 || recommendations?.results?.length > 0;
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>{title}</h2>
+            {
+                (showTitle) &&
+                <h2 className={styles.title}>{title}</h2>
+            }
             {
                 recommendations ?
 
