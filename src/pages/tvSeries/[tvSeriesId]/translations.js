@@ -7,7 +7,6 @@ import styles from '../../../pages/movie/movieId.module.css';
 import TableTranslations from "@/components/table/tableTranslations";
 
 const Translations = ({ data, translations }) => {
-
     const sortedTranlations = translations.translations.sort((a, b) => {
         const nameA = a.english_name.toUpperCase();
         const nameB = b.english_name.toUpperCase();
@@ -28,25 +27,34 @@ const Translations = ({ data, translations }) => {
             </Head>
             <Navigation />
             <Header data={data} />
-            <div className={styles.translationsWrapper}>
-                <div className={styles.left}>
-                    {
-                        translations.translations.length > 0 &&
-                        <h3 className={styles.translationTitle}>Translations {translations.translations.length}</h3>
-                    }
-                    <div className={styles.flexContainerLanguages}>
-                        {
-                            sortedTranlations.map((translation) => {
-                                const { english_name, iso_639_1, iso_3166_1 } = translation;
-                                return <TranslationFilter name={english_name} language={iso_639_1} country={iso_3166_1} key={translation.id} />
-                            })
-                        }
-                    </div>
-                </div>
-                <div className={styles.right}>
-                    <TableTranslations translations={translations} />
-                </div>
-            </div>
+            {
+                sortedTranlations.length > 0 ?
+                    <div className={styles.translationsWrapper}>
+                        <div className={styles.left}
+                            style={{
+                                height: sortedTranlations.length === 1 ? "15rem" : "20rem",
+                            }}
+                        >
+                            {
+                                translations.translations.length > 0 &&
+                                <h3 className={styles.translationTitle}>Translations {translations.translations.length}</h3>
+                            }
+                            <div className={styles.flexContainerLanguages}>
+                                {
+                                    sortedTranlations.map((translation) => {
+                                        const { english_name, iso_639_1, iso_3166_1 } = translation;
+                                        return <TranslationFilter name={english_name} language={iso_639_1} country={iso_3166_1} key={translation.id} />
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <div className={styles.right}>
+                            <TableTranslations translations={translations} />
+                        </div>
+                    </div >
+                    :
+                    <p className={styles.noTranslation}>No translations available &#128532;</p>
+            }
         </>
     )
 }

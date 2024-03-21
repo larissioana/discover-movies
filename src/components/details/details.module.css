@@ -77,10 +77,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    column-gap: 2rem;
+    column-gap: 3rem;
     row-gap: 3rem;
     padding: 2rem;
-    flex-wrap: wrap;
 }
 
 .genres
@@ -169,6 +168,14 @@
 {
     margin-left: 1rem;
     list-style-type: circle;
+}
+
+@media screen and (max-width: 625px)
+{
+    .movieDetails
+    {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 500px)

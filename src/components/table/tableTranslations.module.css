@@ -6,11 +6,6 @@
     margin-top: 1rem;
 }
 
-.translationTitleContainer
-{
-    padding-top: 1rem;
-}
-
 .tableData th,
 .tableData td
 {
@@ -34,8 +29,8 @@
     text-align: left;
 }
 
-.tableData tr:nth-child(even)
+.translationTitleContainer
+
 {
-    background: rgb(180, 180, 84);
-    color: blue;
+    margin-bottom: 3rem;
 }

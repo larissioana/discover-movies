@@ -18,7 +18,6 @@
 .left
 {
     width: 20rem;
-    height: 40rem;
     overflow-y: auto;
     background: rgb(45, 44, 44);
     border-top-right-radius: .5rem;
@@ -40,15 +39,6 @@
     padding: 2rem 0rem;
 }
 
-/* .flexContainerLanguages
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 15rem;
-}
- */
 .translationTitle
 {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
@@ -56,4 +46,11 @@
     padding: 1rem 2rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
+}
+
+.noTranslation
+{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 4rem;
 }
