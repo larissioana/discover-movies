@@ -167,4 +167,3 @@ export const optionsSeries = [
         id: 37
     },
 ];
-

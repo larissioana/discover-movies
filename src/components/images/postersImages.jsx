@@ -2,8 +2,12 @@ import Image from "next/image";
 import { IMAGE_URL_500, imageUrlBackdrop } from "@/utils/fetchAPI";
 import styles from './postersImages.module.css';
 import Info from "./info";
+import NoImage from '../../assets/blur-image.jpg';
+import { useState } from "react";
 
 const PostersImages = ({ poster }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
     const {
         file_path,
         height,
@@ -12,6 +16,11 @@ const PostersImages = ({ poster }) => {
     } = poster;
 
     const imageURL = `${imageUrlBackdrop}${file_path}`;
+
+    const handleLoad = () => {
+        setIsLoading(false);
+    };
+
     return (
         <div className={styles.container}>
             {
@@ -26,8 +35,21 @@ const PostersImages = ({ poster }) => {
                             width={200}
                             height={280}
                             alt={"more images"}
+                            onLoad={handleLoad}
                         />
                     </a>
+                    {
+                        isLoading &&
+                        <Image
+                            className={`${styles.img} ${styles.blur}`}
+                            loading="eager"
+                            priority
+                            src={NoImage}
+                            width={200}
+                            height={280}
+                            alt={"more images"}
+                        />
+                    }
                     <Info
                         width={width}
                         height={height}

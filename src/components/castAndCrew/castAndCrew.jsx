@@ -8,6 +8,21 @@ import { imageUrlProfilesSmall } from '@/utils/fetchAPI';
 
 const CastAndCrewDetails = ({ credits }) => {
     const areCastAndCrew = credits.cast.length > 0 || credits.crew.length > 0;
+
+    const sortedCast = credits.cast.sort((a, b) => {
+        const nameA = a.original_name.toUpperCase();
+        const nameB = b.original_name.toUpperCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <>
             {areCastAndCrew ?
@@ -18,7 +33,7 @@ const CastAndCrewDetails = ({ credits }) => {
                             <h2 className={styles.title}> Series Cast {credits.cast.length}</h2>
                         }
                         {
-                            credits.cast.map((credit) => {
+                            sortedCast.map((credit) => {
                                 const { id, original_name, profile_path, gender, roles } = credit;
                                 let imageSrc;
                                 if (gender === 0) {

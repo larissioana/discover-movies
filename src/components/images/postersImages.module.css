@@ -11,6 +11,7 @@
     border-radius: .7rem;
     width: 200px;
     box-shadow: 2px 0px 4px 0px #5c3403;
+    position: relative;
 }
 
 .backdropsContainer
@@ -21,6 +22,7 @@
     width: 230px;
     box-shadow: 2px 0px 4px 0px #5c3403;
     height: 260px;
+    position: relative;
 }
 
 .img
@@ -29,6 +31,13 @@
     border-top-right-radius: .7rem;
     border-top-left-radius: .7rem;
     object-position: top;
+}
+
+.blur {
+    filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .imgBackdrop

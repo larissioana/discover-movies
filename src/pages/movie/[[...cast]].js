@@ -13,6 +13,35 @@ import userMale from '../../assets/userAvatarMale.png';
 
 const CastAndCrew = ({ data, credits }) => {
     const areCastAndCrew = credits.cast.length > 0 || credits.crew.length > 0;
+
+    const sortedCast = credits.cast.sort((a, b) => {
+        const nameA = a.original_name.toUpperCase();
+        const nameB = b.original_name.toUpperCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+
+    const sortedCrew = credits.crew.sort((a, b) => {
+        const nameA = a.original_name.toUpperCase();
+        const nameB = b.original_name.toUpperCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+
     return (
         <>
             <Head>
@@ -30,7 +59,7 @@ const CastAndCrew = ({ data, credits }) => {
                                 <h2 className={styles.title}>Cast {credits.cast.length}</h2>
                             }
                             {
-                                credits.cast.map((credit) => {
+                                sortedCast.map((credit) => {
                                     const { id, character, original_name, profile_path, gender } = credit;
                                     let imageSrc;
                                     if (gender === 0) {
@@ -86,7 +115,7 @@ const CastAndCrew = ({ data, credits }) => {
                                 <h2 className={styles.title}>Crew {credits.crew.length}</h2>
                             }
                             {
-                                credits.crew.map((credit) => {
+                                sortedCrew.map((credit) => {
                                     const { id, job, original_name, profile_path, gender } = credit;
                                     let imageSrc;
                                     if (gender === 0) {

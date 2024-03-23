@@ -10,7 +10,6 @@ const Videos = ({ videos, isLoading, containerRef }) => {
                     return <div key={id} className={styles.trailers}>
                         {
                             !isLoading ?
-
                                 <ReactPlayer
                                     controls
                                     className={styles.reactPlayer}

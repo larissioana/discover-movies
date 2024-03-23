@@ -31,6 +31,19 @@
     overflow-x: auto;
 }
 
+.imageContainer
+{
+    position: relative;
+}
+
+.blur
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    filter: blur(20px);
+}
+
 .poster,
 .backdrop
 {
@@ -38,24 +51,6 @@ object-fit: cover;
 object-position: top;
 border-radius: .4rem;
 margin-bottom: 1rem;
-}
-
-.loading
-{
-    width: 250px;
-    height: 350px;
-    background: rgb(16, 15, 15);
-    border-radius: .4rem;
-    filter: blur(3px);
-}
-
-.loadingBackdrops
-{
-    width: 230px;
-    height: 130px;
-    background: rgb(16, 15, 15);
-    border-radius: .4rem;
-    filter: blur(3px);
 }
 
 .loadingVideos
