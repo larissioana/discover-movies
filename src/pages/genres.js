@@ -111,18 +111,7 @@ const Genres = () => {
             {
                 !isLoading ?
                     <>
-                        {
-                            activeContentType === "movies" ?
-                                movies?.map((movie, index) => {
-                                    const { backdrop_path, title, id } = movie;
-                                    return index === 1 ? <Banner id={id} name={title} key={index} isLoading={isLoading} imageUrl={backdrop_path} /> : null;
-                                })
-                                :
-                                tvShows?.map((show, index) => {
-                                    const { backdrop_path, name, id } = show;
-                                    return index === 1 ? <Banner id={id} name={name} key={index} isLoading={isLoading} imageUrl={backdrop_path} /> : null;
-                                })
-                        }
+
                         {
                             activeContentType === "movies" ?
                                 <FilteredData isloading={isLoading} data={movies} />
