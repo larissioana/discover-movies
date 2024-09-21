@@ -6,6 +6,8 @@ import styles from './filteredData.module.css';
 import { shortenTitle } from "@/utils/helpers";
 
 const FilteredData = ({ data }) => {
+    console.log({ data })
+    const image = 'http://image.tmdb.org/t/p/'
     return (
         <div className={styles.container}>
             {
@@ -27,6 +29,10 @@ const FilteredData = ({ data }) => {
                                                 loading="eager"
                                                 quality={75}
                                                 priority
+
+                                                srcSet={`${image}/w=152/${poster_path},
+                                                ${image}/w=185${poster_path},
+                                                ${image}/w=300${poster_path}`}
                                                 alt={name}
                                                 className={styles.posterImage}
                                             />
@@ -53,6 +59,8 @@ const FilteredData = ({ data }) => {
                                                 alt={title}
                                                 priority
                                                 className={styles.posterImage}
+                                                placeholder="blur"
+                                                blurDataURL={`${imageUrl}${poster_path}?blur=10`}
                                             />
                                         </Link>
                                     }

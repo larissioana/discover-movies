@@ -1,13 +1,9 @@
 import Image from "next/image";
-import { IMAGE_URL_500, imageUrlBackdrop } from "@/utils/fetchAPI";
+import { imageUrlBackdrop } from "@/utils/fetchAPI";
 import styles from './postersImages.module.css';
 import Info from "./info";
-import NoImage from '../../assets/blur-image.jpg';
-import { useState } from "react";
 
 const PostersImages = ({ poster }) => {
-    const [isLoading, setIsLoading] = useState(true);
-
     const {
         file_path,
         height,
@@ -16,10 +12,7 @@ const PostersImages = ({ poster }) => {
     } = poster;
 
     const imageURL = `${imageUrlBackdrop}${file_path}`;
-
-    const handleLoad = () => {
-        setIsLoading(false);
-    };
+    const imageUrl = 'http://image.tmdb.org/t/p/w300/'
 
     return (
         <div className={styles.container}>
@@ -31,18 +24,19 @@ const PostersImages = ({ poster }) => {
                             className={styles.img}
                             loading="eager"
                             priority
-                            src={`${IMAGE_URL_500}${file_path}`}
+                            src={`${imageUrl}${file_path}`}
+                            placeholder="blur"
+                            blurDataURL={`${imageUrl}${file_path}`}
                             width={200}
                             height={280}
                             quality={75}
                             alt={"more images"}
-                            onLoad={handleLoad}
                         />
                     </a>
-                    {
+                    {/*  {
                         isLoading &&
                         <Image
-                            className={`${styles.img} ${styles.blur}`}
+                            className={`${styles.img} #styles.blur}`}
                             loading="eager"
                             priority
                             src={NoImage}
@@ -51,7 +45,7 @@ const PostersImages = ({ poster }) => {
                             quality={75}
                             alt={"more images"}
                         />
-                    }
+                    } */}
                     <Info
                         width={width}
                         height={height}

@@ -2,12 +2,8 @@ import { imageUrlBackdrops, imageUrlBackdrop } from "@/utils/fetchAPI";
 import Image from "next/image";
 import styles from './postersImages.module.css';
 import Info from "./info";
-import NoImage from '../../assets/blur-image.jpg';
-import { useState } from "react";
 
 const BackdropsImages = ({ backdrop }) => {
-    const [isLoading, setIsLoading] = useState(true);
-
     const {
         file_path,
         width,
@@ -15,10 +11,6 @@ const BackdropsImages = ({ backdrop }) => {
         vote_average
     } = backdrop;
     const imageUrl = `${imageUrlBackdrop}${file_path}`;
-
-    const handleLoad = () => {
-        setIsLoading(false);
-    };
 
     return (
         <div className={styles.container}>
@@ -34,24 +26,10 @@ const BackdropsImages = ({ backdrop }) => {
                             width={230}
                             height={120}
                             alt={"more images"}
-                            onLoad={handleLoad}
                             quality={75}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                     </a>
-                    {
-                        isLoading &&
-                        <Image
-                            className={`${styles.imgBackdrop} ${styles.blur}`}
-                            loading="eager"
-                            priority
-                            src={NoImage}
-                            width={230}
-                            quality={75}
-                            height={120}
-                            alt={"more images"}
-                        />
-                    }
                     <Info
                         width={width}
                         height={height}
