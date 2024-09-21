@@ -40,7 +40,7 @@ const Cast = ({ credits }) => {
                                             className={styles.img}
                                             loading="eager"
                                             priority
-                                            quality={75}
+                                            quality={100}
                                         />
                                     </Link>
                                     :
@@ -52,7 +52,7 @@ const Cast = ({ credits }) => {
                                                     width={150}
                                                     height={220}
                                                     alt={name}
-                                                    quality={75}
+                                                    quality={100}
                                                     className={styles.img}
                                                     loading="eager"
                                                     priority
@@ -65,7 +65,7 @@ const Cast = ({ credits }) => {
                                                     width={150}
                                                     height={220}
                                                     alt={name}
-                                                    quality={75}
+                                                    quality={100}
                                                     className={styles.img}
                                                     loading="eager"
                                                     priority
