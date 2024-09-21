@@ -65,6 +65,7 @@ const Cast = ({ credits }) => {
                                                     width={150}
                                                     height={220}
                                                     alt={name}
+                                                    quality={75}
                                                     className={styles.img}
                                                     loading="eager"
                                                     priority
