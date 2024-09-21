@@ -63,6 +63,7 @@
   background: rgb(27, 26, 26);
   color: white;
   border-radius: 2rem;
+  font-size: 16px;
   border: 1px solid rgb(110, 107, 107);
   padding: 0.7rem 0.5rem;
 }
@@ -76,7 +77,7 @@
   width: 100%;
   border: none;
   background: none;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: 16px;
   color: white;
   text-overflow: ellipsis;
   text-indent: 1rem;

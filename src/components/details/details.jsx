@@ -39,7 +39,7 @@ const Details = ({
     seasonsNumber,
     episodesNumber,
     imdb,
-    seasons
+    seasons,
 }) => {
 
     const releasedDate = new Date(releaseDate || firstAirDate);
