@@ -29,6 +29,7 @@ const Movies = ({ movies }) => {
                     src={`${imageUrl}${poster_path}`}
                     width={200}
                     height={300}
+                    quality={75}
                     alt={title || name}
                     loading="eager"
                     priority
@@ -41,6 +42,7 @@ const Movies = ({ movies }) => {
                     src={`${imageUrl}${poster_path}`}
                     width={200}
                     height={300}
+                    quality={75}
                     alt={title || name}
                     loading="eager"
                     priority

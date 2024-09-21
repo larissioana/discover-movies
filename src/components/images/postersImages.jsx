@@ -34,6 +34,7 @@ const PostersImages = ({ poster }) => {
                             src={`${IMAGE_URL_500}${file_path}`}
                             width={200}
                             height={280}
+                            quality={75}
                             alt={"more images"}
                             onLoad={handleLoad}
                         />
@@ -47,6 +48,7 @@ const PostersImages = ({ poster }) => {
                             src={NoImage}
                             width={200}
                             height={280}
+                            quality={75}
                             alt={"more images"}
                         />
                     }

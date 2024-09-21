@@ -25,6 +25,7 @@ const FilteredData = ({ data }) => {
                                                 width={250}
                                                 height={350}
                                                 loading="eager"
+                                                quality={75}
                                                 priority
                                                 alt={name}
                                                 className={styles.posterImage}
@@ -46,6 +47,7 @@ const FilteredData = ({ data }) => {
                                             <Image
                                                 src={`${imageUrl}${poster_path}`}
                                                 width={250}
+                                                quality={75}
                                                 height={350}
                                                 loading="eager"
                                                 alt={title}

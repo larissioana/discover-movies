@@ -35,6 +35,7 @@ const BackdropsImages = ({ backdrop }) => {
                             height={120}
                             alt={"more images"}
                             onLoad={handleLoad}
+                            quality={75}
                         />
                     </a>
                     {
@@ -45,6 +46,7 @@ const BackdropsImages = ({ backdrop }) => {
                             priority
                             src={NoImage}
                             width={230}
+                            quality={75}
                             height={120}
                             alt={"more images"}
                         />

@@ -41,6 +41,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                                     src={`${imageUrl}${poster_path}`}
                                                     width={180}
                                                     height={260}
+                                                    quality={75}
                                                     alt={title || name}
                                                     loading="eager"
                                                     priority
@@ -54,6 +55,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                                         <Image
                                                             src={`${imageUrl}${poster_path}`}
                                                             width={180}
+                                                            quality={75}
                                                             height={260}
                                                             alt={title || name}
                                                             loading="eager"
@@ -93,6 +95,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                                         src={`${imageUrl}${poster_path}`}
                                                         width={180}
                                                         height={260}
+                                                        quality={75}
                                                         alt={title || name}
                                                         loading="eager"
                                                         priority
@@ -105,6 +108,7 @@ const Recommendations = ({ recommendations, title, combinedCredits }) => {
                                                         src={NoImage}
                                                         width={180}
                                                         height={250}
+                                                        quality={75}
                                                         alt={title || name}
                                                         loading="eager"
                                                         priority

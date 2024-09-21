@@ -27,7 +27,8 @@ const TvSeriesEpisodes = ({ episode }) => {
                                 <Image src={`${IMAGE_URL_342}${still_path}`}
                                     width={322}
                                     height={152}
-                                    loading="eager"
+                                    loading="lazy"
+                                    quality={75}
                                     alt={name}
                                     className={styles.episodeImage}
                                 />
@@ -35,7 +36,8 @@ const TvSeriesEpisodes = ({ episode }) => {
                                 <Image src={NoImage}
                                     width={342}
                                     height={152}
-                                    loading="eager"
+                                    quality={75}
+                                    loading="lazy"
                                     alt={name}
                                     className={styles.episodeImage}
                                 />

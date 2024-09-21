@@ -55,6 +55,7 @@ const CastAndCrewDetails = ({ credits }) => {
                                                             width={100}
                                                             height={130}
                                                             loading="eager"
+                                                            quality={75}
                                                             priority
                                                             className={styles.img}
                                                             alt={original_name}
@@ -68,6 +69,7 @@ const CastAndCrewDetails = ({ credits }) => {
                                                             height={130}
                                                             loading="eager"
                                                             priority
+                                                            quality={75}
                                                             className={styles.img}
                                                             alt={original_name}
                                                         />

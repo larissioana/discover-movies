@@ -93,7 +93,7 @@ const Details = ({
                 <div className={styles.left}>
                     {
                         posterPath ?
-                            <Image src={image} className={styles.image} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
+                            <Image src={image} className={styles.image} quality={75} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
                             :
                             <Image src={NoImage} className={styles.image} priority loading="eager" alt={title || "poster of the specific movie/tv series"} width={300} height={450} />
                     }

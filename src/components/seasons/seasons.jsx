@@ -33,6 +33,7 @@ const Seasons = ({ seasons }) => {
                                 alt={name}
                                 height={220}
                                 loading="lazy"
+                                quality={75}
                                 className={styles.img}
                             />
                             :
@@ -41,6 +42,7 @@ const Seasons = ({ seasons }) => {
                                 width={200}
                                 alt={name}
                                 height={200}
+                                quality={75}
                                 loading="lazy"
                                 className={styles.img}
                             />

@@ -25,6 +25,7 @@ const Header = ({ data }) => {
                     src={`${IMAGE_URL_342}${poster_path}`}
                     width={80}
                     height={120}
+                    quality={75}
                     alt={original_title || original_name}
                     loading="eager"
                     priority

@@ -80,8 +80,8 @@ const Media = ({ images, videos }) => {
                                             src={`${imageUrl}${file_path}`}
                                             width={250}
                                             height={350}
-                                            priority
-                                            loading='eager'
+                                            quality={75}
+                                            loading='lazy'
                                             className={styles.poster}
                                             onLoad={handleLoad}
                                             alt="images of the specific movie"
@@ -93,8 +93,8 @@ const Media = ({ images, videos }) => {
                                             src={NoImage}
                                             width={250}
                                             height={350}
-                                            priority
-                                            loading='eager'
+                                            quality={75}
+                                            loading='lazy'
                                             className={styles.blur}
                                             alt="images of the specific movie"
                                         />
@@ -116,8 +116,8 @@ const Media = ({ images, videos }) => {
                                             src={`${imageUrlBackdrops}${file_path}`}
                                             width={230}
                                             height={130}
-                                            loading='eager'
-                                            priority
+                                            loading='lazy'
+                                            quality={75}
                                             className={styles.backdrop}
                                             alt="images of the specific movie"
                                         />
@@ -129,6 +129,7 @@ const Media = ({ images, videos }) => {
                                             width={230}
                                             height={130}
                                             loading='eager'
+                                            quality={75}
                                             priority
                                             className={styles.blur}
                                             alt="images of the specific movie"
